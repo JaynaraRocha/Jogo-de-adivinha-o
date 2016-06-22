@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Jogo Adivinha com Tentativas</title>
+</head>
+<script type="text/javascript">
+	
+	function pulaLinha (){
+		document.write ("<br>");	
+	};
+	var mostra = function(frase) {
+		document.write("<big>" + frase + "</big>" + "<hr>");
+		pulaLinha();
+	};
+	function sorteia(n){
+		var sorteia = Math.round(Math.random() * n);
+		return sorteia;
+	};
+
+	var chute = parseInt(prompt("Qual é o seu chute?"));
+	var numeroPensado = sorteia(10);
+
+	
+	if (isNaN(chute)) {
+		mostra("Não é permido letras apenas números! ");
+		}
+	if (chute == numeroPensado){
+		mostra("Parabéns você acertou o chute! O número é: " + numeroPensado);
+		}
+	if (chute > numeroPensado) {
+		mostra("Seu chute é: " + "<font face='Impact' size='22' color='blue'>" + chute + "</font>");
+		mostra("O número que você chutou é maior que pensei: " + "<font face='Impact' size='22' color='blue'>" + numeroPensado + "</font>");
+		}
+	if (chute < numeroPensado) {
+		mostra("Seu chute é: " + "<font face='Impact' size='22' color='red'>" + chute + "</font>");
+		mostra("O número que você chutou é menor que pensei: " + "<font face='Impact' size='22' color='red'>" + numeroPensado + "</font>");
+		}
+	
+</script>
+<body>
+
+</body>
+</html>
